@@ -1,0 +1,138 @@
+query getUsers{
+  users{id,username,email}
+}
+query getEvents{
+  events{id,title,desc}
+}
+query getLocations{
+  locations{id,name,desc}
+}
+query getParticipants{
+  participants{id,user_id,event_id}
+}
+
+mutation addUser{
+  addUser(
+    data:{
+      username:"ramazan",
+      email:"ramazan@gmail.com"
+    }
+  ){
+    id,
+  	username,
+    email
+  }
+}
+mutation addEvent{
+  addEvent(
+    data:{
+      title:"new title",
+      desc:"new desc",
+      date:"date",
+      from:"from",
+      to:"to",
+      location_id:"2",
+      user_id:"5"
+    }
+  ){
+    id,
+    title,
+    desc
+  }
+}
+mutation addLocation{
+  addLocation(
+    data:{
+      name:"Local name",
+      desc:"Local desc",
+      lat:-64.56434,
+      lng:45.43232
+    }
+  ){id,name}
+}
+mutation addParticipant{
+  addParticipant(
+    data:{
+      user_id:"42gw24",
+      event_id:"4t435h"
+    }
+  ){id,user_id,event_id}
+}
+
+mutation updateUser{
+  updateUser(
+    data:{
+      id:"3",
+      username:"Nick"
+    }
+  ){id,username}
+}
+mutation updateEvent{
+  updateEvent(
+   data:{
+    id:"1",
+    title:"Güncelleme",
+    desc:"Güncellemeeeeee"
+  } 
+  ){id,title}
+}
+mutation updateLocation{
+  updateLocation(
+    data:{
+      id:"1",
+      name:"Değişen Name",
+      desc:"Değişen Desc"
+    }
+  ){id,name,desc}
+}
+mutation updateParticipant{
+  updateParticipant(
+    data:{
+      id:"3",
+      user_id:"100",
+      event_id:"200"
+    }
+  ){id,user_id,event_id}
+}
+
+mutation deleteUser{
+  deleteUser(
+    data:{
+      id:"2"
+    }
+  ){id,username}
+}
+mutation deleteEvent{
+  deleteEvent(
+    data:{
+      id:"1"
+    }
+  ){id,title}
+}
+mutation deleteLocation{
+  deleteLocation(
+    data:{
+      id:"2"
+    }
+  ){id,name}
+}
+mutation deleteParticipant{
+  deleteParticipant(
+    data:{
+      id:"1"
+    }
+  ){id,user_id,event_id}
+}
+
+mutation deleteAllUser{
+  deleteAllUser
+}
+mutation deleteAllEvent{
+  deleteAllEvent
+}
+mutation deleteAllLocation{
+  deleteAllLocation
+}
+mutation deleteAllParticipant{
+  deleteAllParticipant
+}
